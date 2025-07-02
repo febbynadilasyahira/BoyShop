@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keranjang Belanja</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-[#f0faff] text-gray-800 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-white shadow-md py-4 px-6">
+    <div class="max-w-6xl mx-auto flex justify-between items-center">
+      <h1 class="text-xl font-bold text-sky-600">Boy Shop</h1>
+      <a href="index.html" class="text-sky-500 hover:underline">← Kembali ke Beranda</a>
+    </div>
+  </header>
+
+  <!-- Keranjang Section -->
+  <section class="max-w-4xl mx-auto py-10 px-4">
+    <h2 class="text-2xl font-bold mb-6">Keranjang Belanja</h2>
+    <div id="cart-items" class="space-y-4">
+      <!-- Isi keranjang akan muncul di sini -->
+    </div>
+    <div id="cart-total" class="mt-6 text-xl font-semibold text-right"></div>
+    <div id="checkout-box" class="text-right mt-4"></div>
+  </section>
+
+  <script>
+    function loadCart() {
+      const cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+      const container = document.getElementById('cart-items');
+      const totalBox = document.getElementById('cart-total');
+      const checkoutBox = document.getElementById('checkout-box');
+
+      container.innerHTML = '';
+      let total = 0;
+
+      if (cartItems.length === 0) {
+        container.innerHTML = '<p class="text-gray-500">Keranjang masih kosong.</p>';
+        totalBox.innerHTML = '';
+        checkoutBox.innerHTML = '';
+        return;
+      }
+
+      cartItems.forEach((item, index) => {
+        const photoUrl = 'https://fatimaazhr.psl17.my.id/uploads/' + item.photo;
+        const itemTotal = parseInt(item.price) * (item.quantity || 1);
+        total += itemTotal;
+
+        const div = document.createElement('div');
+        div.className = 'flex items-center justify-between bg-white shadow-md rounded-lg p-4';
+
+        div.innerHTML = `
+          <div class="flex items-center space-x-4">
+            <img src="${photoUrl}" alt="${item.name}" class="w-20 h-20 object-cover rounded">
+            <div>
+              <h3 class="font-semibold text-gray-800">${item.name}</h3>
+              <p class="text-sky-600 font-bold">Rp${parseInt(item.price).toLocaleString('id-ID')}</p>
+              <div class="flex items-center mt-2 space-x-2">
+                <button onclick="updateQuantity(${index}, -1)" class="px-2 bg-sky-200 text-sky-700 rounded">-</button>
+                <span>${item.quantity || 1}</span>
+                <button onclick="updateQuantity(${index}, 1)" class="px-2 bg-sky-200 text-sky-700 rounded">+</button>
+              </div>
+            </div>
+          </div>
+          <button onclick="removeFromCart(${index})" class="text-red-500 hover:text-red-700 font-bold">Hapus</button>
+        `;
+
+        container.appendChild(div);
+      });
+
+    totalBox.innerHTML = `Total: Rp${total.toLocaleString('id-ID')}`;
+
+let message = "Halo, saya ingin memesan:\n";
+cartItems.forEach(item => {
+  const qty = item.quantity || 1;
+  const subtotal = item.price * qty;
+  message += `- ${item.name} x ${qty} = Rp${subtotal.toLocaleString('id-ID')}\n`;
+});
+message += `\nTotal: Rp${total.toLocaleString('id-ID')}`;
+
+// Encode pesan untuk URL WhatsApp
+const encodedMessage = encodeURIComponent(message);
+
+checkoutBox.innerHTML = `
+  <a href="https://wa.me/6289605561772?text=${encodedMessage}" target="_blank"
+     class="inline-block bg-green-500 hover:bg-green-600 text-white font-semibold px-6 py-2 rounded mt-4">
+    Checkout via WhatsApp
+  </a>
+`;
+    }
+
+    function updateQuantity(index, change) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      if (!cart[index].quantity) cart[index].quantity = 1;
+      cart[index].quantity += change;
+      if (cart[index].quantity < 1) cart[index].quantity = 1;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    function removeFromCart(index) {
+      let cart = JSON.parse(localStorage.getItem('cart')) || [];
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      loadCart();
+    }
+
+    document.addEventListener('DOMContentLoaded', loadCart);
+  </script>
+
+</body>
+</html>
