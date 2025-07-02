@@ -1,166 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toko Online - Produk Terbaik</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Toko Online - Produk Terbaik</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100">
-    <!-- Navbar -->
-    <nav class="bg-white shadow-lg">
-        <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between">
-                <div class="flex space-x-7">
-                    <div>
-                        <a href="#" class="flex items-center py-4 px-2">
-                            <span class="font-semibold text-gray-500 text-lg">Boy shop</span>
-                        </a>
-                    </div>
-                    <div class="hidden md:flex items-center space-x-1">
-                        <a href="#" class="py-4 px-2 text-green-500 border-b-4 border-sky-400 font-semibold">Beranda</a>
-                       
-                    </div>
-                </div>
-                <div class="hidden md:flex items-center space-x-3">
-                
-                    <a href="keranjang.html" class="py-2 px-2 font-medium text-white bg-sky-400 rounded hover:bg-sky-400 transition duration-300">
-                        <i class="fas fa-shopping-cart"></i> Keranjang
-                    </a>
-                </div>
 
-                </div>
-                <div class="md:hidden flex items-center">
-                    <button class="outline-none mobile-menu-button">
-                        <i class="fas fa-bars text-gray-500 text-xl"></i>
-                    </button>
-                </div>
-            </div>
+  <!-- Navbar -->
+  <nav class="bg-white shadow-lg">
+    <div class="max-w-6xl mx-auto px-4">
+      <div class="flex justify-between items-center py-3">
+        <!-- Logo -->
+        <div class="flex space-x-4 items-center">
+          <a href="#" class="text-lg font-semibold text-gray-700">Boy Shop</a>
         </div>
-        <div class="hidden mobile-menu">
-            <ul>
-                <li class="active"><a href="#" class="block text-sm px-2 py-4 text-white bg-sky-400 font-semibold">Beranda</a></li>
-                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-sky-400 transition duration-300">Produk</a></li>
-                
-            </ul>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-   <div class="bg-sky-400 py-20 px-4">
-        <div class="max-w-6xl mx-auto text-center">
-            <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Selamat Datang di Toko Kami</h1>
-            <p class="text-xl text-white mb-8">Temukan produk terbaik dengan harga terbaik</p>
-            <div class="relative max-w-xl mx-auto">
-                <input type="text" placeholder="Cari produk..." class="w-full py-3 px-4 rounded-full shadow-lg focus:outline-none">
-                <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-sky-400 text-white py-2 px-4 rounded-full hover:bg-sky-400 transition duration-300">
-                    <i class="fas fa-search"></i>
-                </button>
-            </div>
+        <!-- Menu desktop -->
+        <div class="hidden md:flex items-center space-x-6">
+          <a href="#" class="text-sky-600 font-semibold border-b-2 border-sky-400">Beranda</a>
+          <a href="keranjang.html" class="bg-sky-400 text-white px-3 py-2 rounded hover:bg-sky-500 transition">
+            <i class="fas fa-shopping-cart"></i> Keranjang
+          </a>
         </div>
+
+        <!-- Menu button mobile -->
+        <div class="md:hidden flex items-center">
+          <button class="mobile-menu-button">
+            <i class="fas fa-bars text-xl text-gray-600"></i>
+          </button>
+        </div>
+      </div>
     </div>
 
-    <!-- Popular Products -->
+    <!-- Mobile Menu -->
+    <div class="mobile-menu hidden px-4 pb-4">
+      <a href="#" class="block py-2 text-gray-700 font-semibold hover:text-sky-500">Beranda</a>
+      <a href="keranjang.html" class="flex items-center bg-sky-400 text-white px-4 py-2 rounded hover:bg-sky-500 transition w-max mt-2">
+        <i class="fas fa-shopping-cart mr-2"></i> Keranjang
+      </a>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <div class="bg-sky-400 py-20 px-4">
+    <div class="max-w-6xl mx-auto text-center">
+      <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Selamat Datang di Toko Kami</h1>
+      <p class="text-xl text-white mb-8">Temukan produk terbaik dengan harga terbaik</p>
+      <div class="relative max-w-xl mx-auto">
+        <input type="text" placeholder="Cari produk..." class="w-full py-3 px-4 rounded-full shadow-lg focus:outline-none">
+        <button class="absolute right-2 top-1/2 transform -translate-y-1/2 bg-sky-400 text-white py-2 px-4 rounded-full hover:bg-sky-500 transition duration-300">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Produk Populer -->
   <div class="max-w-6xl mx-auto py-12 px-4">
     <div class="flex justify-between items-center mb-8">
       <h2 class="text-2xl font-bold text-gray-800">Produk Populer</h2>
       <a href="#" class="bg-sky-400 text-white hover:bg-sky-500 font-medium px-4 py-2 rounded transition duration-300">
-  Lihat Semua
-</a>
-
+        Lihat Semua
+      </a>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="popular-products">
-      <!-- Produk populer dari JS -->
-    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="popular-products"></div>
   </div>
 
-  <!-- All Products -->
+  <!-- Semua Produk -->
   <div class="max-w-6xl mx-auto py-12 px-4">
     <div class="flex justify-between items-center mb-8">
       <h2 class="text-2xl font-bold text-gray-800">Semua Produk</h2>
     </div>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="all-products">
-      <!-- Semua produk dari JS -->
-    </div>
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6" id="all-products"></div>
     <div class="flex justify-center mt-8">
-     
+      <button class="bg-sky-400 text-white px-6 py-2 rounded-full hover:bg-sky-500 transition duration-300">
+        Muat Lebih Banyak
+      </button>
     </div>
   </div>
 
-    <!-- Footer -->
-   <footer class="bg-gray-800 text-white py-8 px-4">
-  <div class="max-w-4xl mx-auto text-center">
-    <h3 class="text-2xl font-bold mb-2">BoyShop</h3>
-    <p class="text-gray-300">Jl. Semboja No 03 Kota Bogor</p>
-    <p class="text-gray-300 mt-1">Telp: 0896-0556-1772</p>
-    <p class="text-gray-500 mt-6 text-sm">&copy; 2025 BoyShop. All rights reserved.</p>
-  </div>
-</footer>
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-white py-8 px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h3 class="text-2xl font-bold mb-2">BoyShop</h3>
+      <p class="text-gray-300">Jl. Semboja No 03 Kota Bogor</p>
+      <p class="text-gray-300 mt-1">Telp: 0896-0556-1772</p>
+      <p class="text-gray-500 mt-6 text-sm">&copy; 2025 BoyShop. All rights reserved.</p>
+    </div>
+  </footer>
 
-   <script>
-  const uploadBaseUrl = 'https://fatimaazhr.psl17.my.id/uploads/';
-  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  <!-- Script Produk -->
+  <script>
+    const uploadBaseUrl = 'https://fatimaazhr.psl17.my.id/uploads/';
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
 
-  function addToCart(product) {
-    cart.push(product);
-    localStorage.setItem('cart', JSON.stringify(cart));
-    alert(`✅ ${product.name} berhasil ditambahkan ke keranjang!`);
-  }
-
-  async function fetchProducts() {
-    try {
-      const allRes = await fetch('https://fatimaazhr.psl17.my.id/api/products');
-      const allJson = await allRes.json();
-
-      const popularRes = await fetch('https://fatimaazhr.psl17.my.id/api/products/popular/all');
-      const popularJson = await popularRes.json();
-
-      console.log("Semua Produk:", allJson);
-      console.log("Produk Populer:", popularJson);
-
-      const allProducts = Array.isArray(allJson) ? allJson : allJson.data;
-      const popularProducts = Array.isArray(popularJson) ? popularJson : popularJson.data;
-
-      renderProducts(allProducts, 'all-products');
-      renderProducts(popularProducts, 'popular-products', true);
-    } catch (error) {
-      console.error('Gagal memuat produk:', error);
-    }
-  }
-
-  function renderProducts(products, containerId, isPopular = false) {
-    const container = document.getElementById(containerId);
-    container.innerHTML = '';
-
-    if (!Array.isArray(products)) {
-      console.warn('Produk bukan array:', products);
-      return;
+    function addToCart(product) {
+      cart.push(product);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      alert(`✅ ${product.name} berhasil ditambahkan ke keranjang!`);
     }
 
-    products.forEach(product => {
-      const photoUrl = uploadBaseUrl + product.photo;
+    async function fetchProducts() {
+      try {
+        const allRes = await fetch('https://fatimaazhr.psl17.my.id/api/products');
+        const allJson = await allRes.json();
+        const popularRes = await fetch('https://fatimaazhr.psl17.my.id/api/products/popular/all');
+        const popularJson = await popularRes.json();
 
-      const card = document.createElement('div');
-      card.className = 'product-card bg-white border border-gray-200 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-transform transform hover:-translate-y-1 duration-300 relative';
+        const allProducts = Array.isArray(allJson) ? allJson : allJson.data;
+        const popularProducts = Array.isArray(popularJson) ? popularJson : popularJson.data;
 
-      card.innerHTML = `
-        ${isPopular ? '<span class="popular-badge">POPULER</span>' : ''}
-        <img src="${photoUrl}" alt="${product.name}" class="w-full h-60 object-cover rounded-t-2xl">
-        <div class="p-4">
-          <h3 class="text-lg font-semibold text-gray-800 mb-1">${product.name}</h3>
-          <p class="text-sky-600 text-xl font-bold mb-3">Rp${parseInt(product.price).toLocaleString('id-ID')}</p>
-          <button class="add-to-cart w-full bg-sky-500 text-white font-medium py-2 rounded-lg hover:bg-sky-600 transition duration-200">
-            <i class="fas fa-shopping-cart mr-2"></i> Tambah ke Keranjang
-          </button>
-        </div>
-      `;
+        renderProducts(allProducts, 'all-products');
+        renderProducts(popularProducts, 'popular-products', true);
+      } catch (error) {
+        console.error('Gagal memuat produk:', error);
+      }
+    }
 
-      // Tambahkan event listener setelah tombol dibuat
-      setTimeout(() => {
-        const btn = card.querySelector('.add-to-cart');
-        btn.addEventListener('click', () => {
+    function renderProducts(products, containerId, isPopular = false) {
+      const container = document.getElementById(containerId);
+      container.innerHTML = '';
+
+      products.forEach(product => {
+        const photoUrl = uploadBaseUrl + product.photo;
+
+        const card = document.createElement('div');
+        card.className = 'bg-white border border-gray-200 rounded-2xl overflow-hidden shadow hover:shadow-xl transition-transform transform hover:-translate-y-1 duration-300 relative';
+
+        card.innerHTML = `
+          ${isPopular ? '<span class="absolute top-2 left-2 bg-red-500 text-white text-xs px-2 py-1 rounded">POPULER</span>' : ''}
+          <img src="${photoUrl}" alt="${product.name}" class="w-full h-60 object-cover rounded-t-2xl">
+          <div class="p-4">
+            <h3 class="text-lg font-semibold text-gray-800 mb-1">${product.name}</h3>
+            <p class="text-sky-600 text-xl font-bold mb-3">Rp${parseInt(product.price).toLocaleString('id-ID')}</p>
+            <button class="w-full bg-sky-500 text-white font-medium py-2 rounded-lg hover:bg-sky-600 transition duration-200 add-to-cart">
+              <i class="fas fa-shopping-cart mr-2"></i> Tambah ke Keranjang
+            </button>
+          </div>
+        `;
+
+        const button = card.querySelector('.add-to-cart');
+        button.addEventListener('click', () => {
           addToCart({
             id: product.id,
             name: product.name,
@@ -168,18 +152,24 @@
             photo: product.photo
           });
         });
-      }, 0);
 
-      container.appendChild(card);
+        container.appendChild(card);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', fetchProducts);
+  </script>
+
+  <!-- Script Toggle Menu -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const menuBtn = document.querySelector('.mobile-menu-button');
+      const menu = document.querySelector('.mobile-menu');
+      menuBtn.addEventListener('click', () => {
+        menu.classList.toggle('hidden');
+      });
     });
-  }
-
-  document.addEventListener('DOMContentLoaded', fetchProducts);
-</script>
-
-
-
-
+  </script>
 
 </body>
 </html>
