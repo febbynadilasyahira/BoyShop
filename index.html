@@ -10,36 +10,42 @@
 </head>
 <body class="bg-gray-100">
 
-<!-- ✅ Navbar -->
-<nav class="bg-white shadow-md">
-  <div class="max-w-6xl mx-auto px-4">
-    <div class="flex justify-between items-center py-4">
-      <!-- Logo -->
-      <a href="#" class="text-lg font-bold text-gray-800">Boy Shop</a>
-
-      <!-- Desktop menu -->
- <div class="hidden md:flex items-center space-x-1">
+  <!-- Navbar -->
+    <nav class="bg-white shadow-lg">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="flex justify-between">
+                <div class="flex space-x-7">
+                    <div>
+                        <a href="#" class="flex items-center py-4 px-2">
+                            <span class="font-semibold text-gray-500 text-lg">Boy shop</span>
+                        </a>
+                    </div>
+                    <div class="hidden md:flex items-center space-x-1">
                         <a href="#" class="py-4 px-2 text-green-500 border-b-4 border-sky-400 font-semibold">Beranda</a>
                        
                     </div>
-        <a href="keranjang.html" class="bg-sky-400 text-white px-3 py-2 rounded hover:bg-sky-500 transition flex items-center">
-          <i class="fas fa-shopping-cart mr-2"></i> Keranjang
-        </a>
-      </div>
-
-      <!-- Mobile menu button -->
-      <div class="md:hidden flex items-center space-x-4">
-        <!-- Icon keranjang di HP -->
-        <a href="keranjang.html" class="text-sky-500 text-xl">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-        <button class="mobile-menu-button text-gray-600 text-2xl">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
-    </div>
-  </div>
-</nav>
+                </div>
+                <div class="hidden md:flex items-center space-x-3">
+                
+                    <a href="keranjang.html" class="py-2 px-2 font-medium text-white bg-sky-400 rounded hover:bg-sky-400 transition duration-300">
+                        <i class="fas fa-shopping-cart"></i> Keranjang
+                    </a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button class="outline-none mobile-menu-button">
+                        <i class="fas fa-bars text-gray-500 text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="hidden mobile-menu">
+            <ul>
+                <li class="active"><a href="#" class="block text-sm px-2 py-4 text-white bg-sky-400 font-semibold">Beranda</a></li>
+                <li><a href="#" class="block text-sm px-2 py-4 hover:bg-sky-400 transition duration-300">Produk</a></li>
+                
+            </ul>
+        </div>
+    </nav>
 
 
   <!-- Hero Section -->
